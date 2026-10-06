@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BlueCompute • Deniz Veri Merkezi Simülatörü</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><span class="badge">Enerji ve iş planlama simülasyonu</span><h1>BlueCompute</h1><p>Denizdeki bir veri merkezi için 24 saatlik iş planı.</p></header>
+<section class="controls"><label>Senaryo <select id="scenario"><option value="normal">Normal gün</option><option value="limited">Düşük enerji kapasitesi</option><option value="hot">Soğutma kapasitesi düşük</option></select></label><label>Senaryo tohumu <input id="seed" type="number" min="0" max="999999" value="42"></label><button id="run">Planları karşılaştır</button><button id="download" class="secondary">Sonuçları indir</button></section>
+<p id="error" role="alert"></p><section id="metrics" class="metrics" aria-live="polite"></section>
+<section class="panel"><h2>Saatlik kapasite ve akıllı plan</h2><p>Elektrik ve soğutma sınırlarının küçük olanı kullanılabilir kapasitedir. Güç: MW.</p><div id="chart" class="chart"></div><div class="legend">■ Mavi: kullanılan güç &nbsp; ▬ Yeşil: kullanılabilir kapasite</div></section>
+<section class="panel"><h2>İşleri düzenle</h2><p>İşler kesintisiz çalışır. Bitiş saati son tarihten ileri olamaz. Her satır ayrı bir iştir.</p><div class="scroll"><table><thead><tr><th>İş</th><th>Güç (MW)</th><th>Süre (saat)</th><th>En erken başlangıç</th><th>Son bitiş</th></tr></thead><tbody id="jobs"></tbody></table></div></section>
+<section class="panel"><h2>Plan karşılaştırması</h2><div id="plans"></div></section>
+<footer>Atomarine fikrinden ilham alan bağımsız eğitim demosu. Atomarine ile bağlantılı değildir. Tüm girdiler sentetiktir; maliyetler varsayımsaldır. Reaktör veya gerçek ekipman kontrolü içermez.</footer>
+</main><script src="engine.js"></script><script src="app.js"></script></body></html>
